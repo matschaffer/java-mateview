@@ -1,4 +1,7 @@
+require 'ruby-debug'
+
 repositories.remote << "http://www.ibiblio.org/maven2"
+repositories.remote << "http://repository.codehaus.org"
 
 def property(name)
   java.lang.System.getProperty name
@@ -18,7 +21,8 @@ define "java-mateview" do
   project.version = "0.0.1"
   project.group = "com.redcareditor"
   manifest["Implementation-Vendor"] = "The Redcar Editor Team"
-  compile.with Dir["lib/org.eclipse.*.jar", "lib/joni.jar", "lib/jdom.jar", "lib/jcodings.jar", SWT_LIB]
+  compile.with Dir["lib/org.eclipse.*.jar", SWT_LIB] +
+               ["org.jruby.joni:joni:jar:1.1.3", "org.jdom:jdom:jar:1.1", "org.jruby.jcodings:jcodings:jar:1.0.1"]
   
   test.using :junit unless ENV['TEST_ONLY'] == "jtestr"
   test.using :jtestr unless ENV['TEST_ONLY'] == "junit"
