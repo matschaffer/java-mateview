@@ -1,6 +1,6 @@
 
-require File.join(File.dirname(__FILE__), *%w(.. src ruby java-mateview))
-
+require Dir["#{File.dirname(__FILE__)}/../api/target/java-mateview-init-*.rb"][0]
+    
 class MateExample < Jface::ApplicationWindow
   attr_reader :mate_text, :contents
   

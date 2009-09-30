@@ -1,4 +1,4 @@
-
+require 'java'
 
 module Swt
   import org.eclipse.swt.SWT
