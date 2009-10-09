@@ -1,5 +1,4 @@
 require 'lib/patch/buildr/eclipse'
-require 'ruby-debug'
 
 repositories.remote << "http://www.ibiblio.org/maven2"
 repositories.remote << "http://repository.codehaus.org"
