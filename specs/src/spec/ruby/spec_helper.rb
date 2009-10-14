@@ -1,5 +1,6 @@
-JavaMateView::Bundle.load_bundles("input/")
-JavaMateView::ThemeManager.load_themes("input/")
+$bundles_path = File.join(File.dirname(__FILE__), %w(.. .. .. .. api input))
+JavaMateView::Bundle.load_bundles($bundles_path)
+JavaMateView::ThemeManager.load_themes($bundles_path)
 
 class JavaMateView::MateText
   
