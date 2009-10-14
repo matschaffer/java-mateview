@@ -32,7 +32,7 @@ define "java-mateview" do
   end
 
   define "specs" do
-    test.with project("api").compile.dependencies + [project("api").compile.target]
+    test.with project("api").compile.dependencies + [project("api").compile.target, project("api")._("target/resources")]
     test.using :rspec, :requires => Dir[project("api")._("src/main/ruby/*.rb")]
   end
 end
