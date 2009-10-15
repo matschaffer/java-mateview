@@ -1,4 +1,5 @@
 bin/
+release
 .DS_Store
 tmp/
 reports/
